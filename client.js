@@ -1,9 +1,9 @@
 let connectionInterval = 100;
 let numberOfUsersToConnect = 1000;
 
-// for (let i = 1; i <= numberOfUsersToConnect; i++) {
+for (let i = 1; i <= numberOfUsersToConnect; i++) {
 
-    setTimeout(() => {
+    // setTimeout(() => {
         let socket = require('socket.io-client')('http://localhost:3000', {
             transports: ['polling', 'websocket'],
             forceNew: true
@@ -22,6 +22,6 @@ let numberOfUsersToConnect = 1000;
         socket.on('error', function (error) {
             console.error('error', error);
         });
-    }, i * connectionInterval);
+    // }, i * connectionInterval);
 
-// }
+}

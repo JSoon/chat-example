@@ -45,12 +45,12 @@ io.on('connection', function (socket) {
     });
 
     setInterval(function () {
-        io.emit('pulse', Math.random());
+        socket.emit('pulse', Math.random());
     }, 2000);
 
-    socket.on('chat message', function (msg) {
-        io.emit('chat message', msg);
-    });
+    // socket.on('chat message', function (msg) {
+    //     io.emit('chat message', msg);
+    // });
 });
 
 require('./client');
