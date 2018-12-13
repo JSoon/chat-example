@@ -44,6 +44,10 @@ io.on('connection', function (socket) {
         console.log('当前连接数：', clients.length);
     });
 
+    setInterval(function () {
+        io.emit('pulse', Math.random());
+    }, 2000);
+
     socket.on('chat message', function (msg) {
         io.emit('chat message', msg);
     });

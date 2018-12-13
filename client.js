@@ -1,7 +1,7 @@
 let connectionInterval = 100;
 let numberOfUsersToConnect = 1000;
 
-for (let i = 1; i <= numberOfUsersToConnect; i++) {
+// for (let i = 1; i <= numberOfUsersToConnect; i++) {
 
     setTimeout(() => {
         let socket = require('socket.io-client')('http://localhost:3000', {
@@ -11,7 +11,10 @@ for (let i = 1; i <= numberOfUsersToConnect; i++) {
         socket.on('connect', function () {
 
         });
-        socket.on('event', function (data) {});
+        socket.on('pulse', function (data) {
+            console.log('pulse', data);
+
+        });
         socket.on('disconnect', function (reason) {
             console.error('reason', reason);
 
@@ -21,4 +24,4 @@ for (let i = 1; i <= numberOfUsersToConnect; i++) {
         });
     }, i * connectionInterval);
 
-}
+// }
