@@ -7,27 +7,27 @@ var adapter = require('socket.io-redis');
 var io = require('socket.io')(http);
 var port = process.env.PORT || 3000;
 
-var sessionStore = '';
-var redisClient = {
-    host: '127.0.0.1',
-    port: 6379,
-    ttl: 30 * 60
-};
-sessionStore = new RedisStore(redisClient);
-//开启session
-app.use(session({
-    cookie: {
-        path: '/',
-        httpOnly: true,
-        secure: false,
-        maxAge: 30 * 60 * 1000
-    },
-    secret: '1234567890qwert@',
-    name: 'migu_music_sid',
-    saveUninitialized: false,
-    resave: false,
-    store: sessionStore
-}));
+// var sessionStore = '';
+// var redisClient = {
+//     host: '127.0.0.1',
+//     port: 6379,
+//     ttl: 30 * 60
+// };
+// sessionStore = new RedisStore(redisClient);
+// //开启session
+// app.use(session({
+//     cookie: {
+//         path: '/',
+//         httpOnly: true,
+//         secure: false,
+//         maxAge: 30 * 60 * 1000
+//     },
+//     secret: '1234567890qwert@',
+//     name: 'migu_music_sid',
+//     saveUninitialized: false,
+//     resave: false,
+//     store: sessionStore
+// }));
 
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
