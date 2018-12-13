@@ -5,7 +5,7 @@ for (let i = 1; i <= numberOfUsersToConnect; i++) {
 
     setTimeout(() => {
         let socket = require('socket.io-client')('http://localhost:3000', {
-            transports: ['websocket'],
+            transports: ['polling', 'websocket'],
             forceNew: true
         });
         socket.on('connect', function () {

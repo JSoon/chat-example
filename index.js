@@ -33,7 +33,7 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + '/index.html');
 });
 
-io.adapter(adapter(redisClient));
+// io.adapter(adapter(redisClient));
 
 io.on('connection', function (socket) {
 
